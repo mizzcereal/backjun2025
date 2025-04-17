@@ -1,16 +1,33 @@
-#include<iostream>
-using namespace std;
-int main(void) {
-	int answer = 0;
-	char pan[8][9];	
-	for (int i = 0; i < 8; i++)
-		cin >> pan[i];
+#include <iostream>
 
-	for (int i = 0; i < 8; i++) {
-		for (int j = i % 2; j < 8; j += 2) {
-			if (pan[i][j] == 'F')
-				answer++;
-		}
-	}
-	cout << answer << endl;
+using namespace std;
+
+int main(){
+
+    char chess[8][8];
+    int count = 0;
+
+    for(int i = 0; i < 8; i++){
+        for(int j = 0; j<8; j++){
+            cin >> chess[i][j];
+        }
+    }
+    for(int i = 0; i <8; i+=2){
+        for(int j = 0; j <8; j+=2){
+            if(chess[i][j] == 'F'){
+                count++;
+            }
+        }
+    }
+    for(int i = 1; i <8; i+=2){
+        for(int j = 1; j <8; j+=2){
+            if(chess[i][j] == 'F'){
+                count++;
+            }
+        }
+    }
+
+
+    cout << count << endl;
+    return 0;
 }
