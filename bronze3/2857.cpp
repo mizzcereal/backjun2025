@@ -9,15 +9,15 @@ int main(){
 
     for(int i = 0; i < 5; i++){
         cin >> fbi[i];
-        if(fbi[i].find("FBI") != -1){
-            cout << i+1 << endl;
+        if(fbi[i].find("FBI") != -1){  
             fbi_count++;
         }
     }
     if(fbi_count == 0){
         cout << "HE GOT AWAY!";
+    }else{
+        cout << fbi_count << endl;
     }
-
     return 0;
     
 }

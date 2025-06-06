@@ -3,31 +3,47 @@
 
 using namespace std;
 
-int main(){
-
+int main() {
     int n;
     string sung;
+    int pre = 0;
 
     cin >> n;
-    string *entry = new string[n];
-    
-    for(int i = 0; i < n; i++){
+    string* entry = new string[n];
+
+    for (int i = 0; i < n; i++) {
         cin >> sung;
         entry[i] = sung[0];
     }
-    
-    for(int i = 0; i < n; i++){
+
+    for (int i = 0; i < n; i++) {
         int count = 0;
-        for(int j = 1; j <= n; j++){
-            if(entry[i] == entry[j]){
+        bool print = false;
+        for(int j = 0; j < i; j++){
+            if(entry[j] == entry[i]){
+                print = true;
+                break;
+            }
+        }
+        if(print){
+            continue;
+        }
+        for (int k = 0; k < n; k++) {
+            if (entry[i] == entry[k]) {
                 count++;
             }
         }
-        if(count >= 5){
+        if (count >= 5) {
             cout << entry[i];
-            continue;
+            pre++;
         }
     }
 
+    if(pre == 0){
+        cout << "PREDAJA";
+    }
+
+
+    delete[] entry;
     return 0;
 }

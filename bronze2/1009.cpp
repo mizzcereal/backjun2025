@@ -20,9 +20,9 @@ int main(){
             a = (a *tmp)%10;
         }
         if(a % 10 == 0){
-            cout << 10;
+            cout << 10 << endl;
         }else{
-            cout << a % 10;
+            cout << a % 10 << endl;
         }
     }
 
